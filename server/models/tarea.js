@@ -1,9 +1,11 @@
+
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
+
 let tareaSchema = new Schema({
   titulo: {
     type: String,
-    Required: 'El campo titulo es obligatorio.'
+    default: "nueva tarea"
   },
   fecha: {
     type: Date,
@@ -17,4 +19,5 @@ let tareaSchema = new Schema({
     default: ['Por hacer']
   }
 });
+
 module.exports = mongoose.model('Tarea', tareaSchema);
